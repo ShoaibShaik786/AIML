@@ -1,0 +1,90 @@
+
+Basic LINUX Commands
+
+        1.pwd- prints the current working directory
+	2.ls   - List of files and folders
+	3.ls -a - Hidden Files and folders as well
+	4. mkdir : create directory
+	5.cd <filename>: opens file/directory
+	6.cd .. : Closes current directory
+
+File Management
+
+	touch :  create file touch< filename.ext>
+	cat: used to see data in the file 
+	nano : used to create file of multiple lines 
+	echo: Insert data to file   echo “ data to enter ”> filename.ext
+	rm : remove file
+	rmdir : remove directory
+
+Basic GIT Commands
+
+	git init: intialize git repository
+	git status: tricked,untracked,unmodified,modified
+	git add filename.ext
+	git  commit -m “First Commit”
+	git config --global user.email “mailID”
+	git config --global user.name “username
+	git log : represents no.of commits”
+
+ Synchronise Data - Local to Server/Server to Local
+
+		1.Create folder with same repository name
+		2.git remote add <local foldername><remote url>  $ git remote add AIML https://github.com/ShoaibShaik786/AIML
+		3.git remote show
+			$ git remote show
+			AIML
+
+		4.git remote -v
+		5.git pull <repository name> master
+		6.git push AIML
+
+$ git pull AIML master
+warning: no common commits
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/ShoaibShaik786/AIML
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> AIML/master
+fatal: refusing to merge unrelated histories
+
+ShoaibShaik@SHOAIB MINGW64 ~/Desktop/AIandML (master)
+$ git push -u AIML
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream AIML master
+
+
+ShoaibShaik@SHOAIB MINGW64 ~/Desktop/AIandML (master)
+$ git push --set-upstream AIML master
+Logon failed, use ctrl+c to cancel basic credential prompt.
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/ShoaibShaik786/AIML/'
+
+
+ShoaibShaik@SHOAIB MINGW64 ~/Desktop/AIandML (master)
+$ git push --set-upstream AIML master
+To https://github.com/ShoaibShaik786/AIML
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/ShoaibShaik786/AIML'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+ShoaibShaik@SHOAIB MINGW64 ~/Desktop/AIandML (master)
+$ git push -f --set-upstream AIML master
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 461 bytes | 57.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To https://github.com/ShoaibShaik786/AIML
+ + 1bfb42c...001732d master -> master (forced update)
+Branch 'master' set up to track remote branch 'master' from 'AIML'.
+
